@@ -1,26 +1,142 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --foreground: 255, 255, 255;
+  --background: 18, 18, 18;
+  --primary: 124, 58, 237;
+  --secondary: 45, 185, 255;
+  --accent: 255, 86, 86;
+  --muted: 115, 115, 115;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(var(--foreground));
+  background-color: rgb(var(--background));
+  font-family: var(--font-inter);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-poppins);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(var(--background), 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(var(--primary), 0.6);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(var(--primary), 0.8);
+}
+
+/* Gradient text utility */
+.gradient-text {
+  @apply bg-gradient-to-r from-purple-500 to-blue-400 bg-clip-text text-transparent;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes bounceRight {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+.animate-bounce-right {
+  animation: bounceRight 1s infinite;
+}
+
+/* Custom card styles */
+.card {
+  @apply bg-neutral-800 rounded-xl overflow-hidden relative;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px -5px rgba(var(--primary), 0.2);
+}
+
+/* Glow effects */
+.glow {
+  position: relative;
+}
+
+.glow::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(var(--primary), 0.1) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: -1;
+}
+
+.glow:hover::after {
+  opacity: 1;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-purple-600 to-blue-500 px-6 py-3 font-medium text-white transition-all hover:from-purple-700 hover:to-blue-600 hover:shadow-lg hover:shadow-purple-500/25;
+}
+
+.btn-outline {
+  @apply inline-flex items-center gap-2 rounded-lg border border-white/20 bg-neutral-800/50 px-6 py-3 font-medium text-white backdrop-blur-sm transition-all hover:bg-white/10 hover:shadow-lg;
+}
+
+/* Grid layout for portfolio */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+/* Section spacing */
+.section {
+  @apply py-24;
+}
+
+.section-title {
+  @apply text-4xl md:text-5xl font-bold mb-12 text-center;
+}
+
+/* Glass effect */
+.glass {
+  @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl;
 }

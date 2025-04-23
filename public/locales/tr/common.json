@@ -1,0 +1,31 @@
+{
+  "hero": {
+    "greeting": "Merhaba, Ben",
+    "name": "Ahmet Burak Özen",
+    "description": "Türkiye'de yaşayan bir yazılım mühendisiyim. İnternet üzerinde yaşayan şeyler oluşturmaktan keyif alıyorum; web siteleri, uygulamalar veya ikisi arasında her şey olabilir. Bir yıldır üniversitede okurken freelance çalışıyorum ve projelerim/işlerim boyunca farklı alanlardan değerli bilgi ve deneyim kazandım."
+  },
+  "nav": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımda",
+    "portfolio": "Portfolyo",
+    "services": "Hizmetler",
+    "contact": "İletişim"
+  },
+  "experience": {
+    "title": "DENEYİM",
+    "present": "Günümüz"
+  },
+  "projects": {
+    "title": "ÖNE ÇIKAN PROJELER",
+    "more": "DİĞER PROJELER",
+    "liveDemo": "Canlı demo",
+    "viewGithub": "Github'da Görüntüle"
+  },
+  "contact": {
+    "title": "İletişime Geç",
+    "name": "İsim",
+    "email": "E-posta",
+    "message": "Mesaj",
+    "send": "Mesaj Gönder"
+  }
+} 

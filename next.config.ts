@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+  output: 'export', // Statik HTML üretmesi için
+  images: {
+    unoptimized: true, // Image Optimization'ı devre dışı bırak
+  },
+}
 
-export default nextConfig;
+export default nextConfig
