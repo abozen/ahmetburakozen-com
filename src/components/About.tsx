@@ -101,22 +101,24 @@ const About = () => {
       <section id="experience" className="container mx-auto px-4 py-16 text-left">
         <h2 className="text-sm font-medium tracking-widest mb-12">EXPERIENCE</h2>
         
-        <div className="flex flex-row gap-8">
+        <div className="flex flex-col md:flex-row gap-8">
           {/* Company List */}
-          <div className="w-[240px] flex-shrink-0 space-y-2">
-            {experiences.map((exp) => (
-              <button
-                key={exp.id}
-                onClick={() => setSelectedCompany(exp.id)}
-                className={`w-full p-4 text-left rounded-lg transition-all duration-300 ${
-                  selectedCompany === exp.id 
-                    ? 'bg-neutral-800 text-white' 
-                    : 'bg-transparent text-gray-400 hover:bg-neutral-900 hover:text-gray-300'
-                }`}
-              >
-                {exp.company}
-              </button>
-            ))}
+          <div className="w-full md:w-[240px] flex-shrink-0">
+            <div className="flex md:flex-col gap-2 overflow-x-auto md:overflow-x-visible pb-4 md:pb-0">
+              {experiences.map((exp) => (
+                <button
+                  key={exp.id}
+                  onClick={() => setSelectedCompany(exp.id)}
+                  className={`whitespace-nowrap md:whitespace-normal p-4 text-left rounded-lg transition-all duration-300 ${
+                    selectedCompany === exp.id 
+                      ? 'bg-neutral-800 text-white' 
+                      : 'bg-transparent text-gray-400 hover:bg-neutral-900 hover:text-gray-300'
+                  }`}
+                >
+                  {exp.company}
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Experience Details */}
