@@ -13,6 +13,7 @@ interface Project {
   tags: string[];
   demoLink: string;
   codeLink: string;
+  codeLink2?: string;
   unfinished: boolean;
 }
 
@@ -51,6 +52,16 @@ const ProjectCard = ({ project }: { project: Project }) => {
           {project.codeLink !== '#' && (
             <a
               href={project.codeLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm transition-all hover:bg-blue-500"
+            >
+              <Github size={18} />
+            </a>
+          )}
+          {project.codeLink2 && (
+            <a
+              href={project.codeLink2}
               target="_blank"
               rel="noopener noreferrer"
               className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm transition-all hover:bg-blue-500"
@@ -137,7 +148,8 @@ const Portfolio = () => {
       image: '/hateguard.jpg',
       tags: ['.NET', 'Next.js', 'OPENAI API'],
       demoLink: '#',
-      codeLink: '#',
+      codeLink: 'https://github.com/abozen/hateguard-backend',
+      codeLink2: 'https://github.com/abozen/hateguard-frontend-public',
       unfinished: true
     },
     {

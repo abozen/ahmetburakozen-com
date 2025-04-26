@@ -43,7 +43,7 @@ const About = () => {
       role: 'Intern Unity Developer',
       period: 'April 2023 – June 2023',
       location: 'Turkey',
-      link: 'https://omicrongames.com',
+      link: 'https://www.omicron.games',
       responsibilities: [
         'Contributed to the development of hyper-casual mobile games',
         'Worked collaboratively with the development team on small-scale projects',
@@ -175,14 +175,14 @@ const About = () => {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="container mx-auto px-4 py-16">
+      {/* <section id="education" className="container mx-auto px-4 py-16">
         <h2 className="text-sm font-medium tracking-widest mb-12">EDUCATION</h2>
         <div className="bg-neutral-800 rounded-lg p-6">
           <h3 className="text-xl font-bold mb-2">B.Sc. in Computer Engineering</h3>
           <p className="text-gray-400">Fatih Sultan Mehmet Vakıf University</p>
           <p className="text-gray-400">2021 – 2025</p>
         </div>
-      </section>
+      </section> */}
 
      
     </div>
